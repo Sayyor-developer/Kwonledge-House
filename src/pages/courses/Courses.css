@@ -1,0 +1,220 @@
+/* --- COURSES PAGE MAIN --- */
+.courses-page {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+}
+
+.courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.courses-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.courses-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: rgba(30, 58, 138, 0.06);
+    color: #1E3A8A;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-700);
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.courses-page-title {
+    font-size: var(--font-size-30);
+    font-weight: var(--font-weight-800);
+    color: #0F172A;
+    margin-bottom: 1rem;
+}
+
+.courses-page-subtitle {
+    font-size: var(--font-size-16);
+    color: #64748B;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --- PREMIUM FILTER TABS --- */
+.filter-tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--gap-10);
+    margin-bottom: 3rem;
+    padding: 0.4rem;
+    background-color: #F1F5F9;
+    border-radius: 16px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.filter-tab {
+    padding: 0.6rem 1.2rem;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-600);
+    color: #475569;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-tab:hover {
+    color: #0F172A;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-tab.tab-active {
+    color: #FFFFFF;
+    background-color: #1E3A8A;
+    /* Sening brend to'q ko'k ranging */
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+/* --- COURSES GRID & ANIMATION --- */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--gap-30);
+}
+
+/* Har bir kartaga kirish effektlari (Domino zanjiri) */
+.courses-grid>* {
+    background-color: #E9F8FB;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: cardFadeIn 0.5s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    /* JSX-dan kelayotgan indeks bo'yicha har bir karobkaga kechikish beramiz */
+    animation-delay: calc(var(--card-i) * 0.05s);
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .courses-page-title {
+        font-size: var(--font-size-30);
+    }
+
+    .filter-tabs-container {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .filter-tab {
+        flex: 1 1 40%;
+        font-size: var(--font-size-14);
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ==========================================================================
+   ⚡ RESPONSIVE STYLES (380px va undan kichik ekranlar uchun maxsus)
+   ========================================================================== */
+@media screen and (max-width: 380px) {
+
+    /* Umumiy sahifa paddingini moslashtiramiz */
+    .courses-page {
+        padding: 20px 10px;
+    }
+
+    .courses-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    /* Sarlavha qismini to'liq markazga tekislash */
+    .courses-header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .courses-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+        margin: 0 auto 10px auto;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .courses-page-title {
+        font-size: 22px;
+        /* Juda katta bo'lib ketmasligi uchun */
+        line-height: 1.3;
+        text-align: center;
+        margin: 0 auto 10px auto;
+    }
+
+    .courses-page-subtitle {
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    /* 📑 Filter tablarini vertikal va o'rtaga joylashtirish */
+    .filter-tabs-container {
+        display: flex;
+        flex-direction: column;
+        /* Yonma-yon sig'magani uchun bir qatorga teriladi */
+        gap: 8px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .filter-tab {
+        width: 100%;
+        /* Tugmalar to'liq kenglikda va bir xil o'lchamda bo'ladi */
+        max-width: 280px;
+        /* Haddan tashqari yoyilib ketmasligi uchun cheklov */
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    /* 🎴 Kurslar setkasini (Grid) o'rtaga tekislash */
+    .courses-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* 📦 CourseCard komponentini o'rtaga joylash va moslashtirish */
+    /* Eslatma: Agar ichki stillar ta'sir qilmasa, CourseCard.css faylingga ham solishtir */
+    .courses-grid>* {
+        width: 100% !important;
+        max-width: 320px;
+        /* Kichik ekran chekkalari bilan chiroyli masofa qoladi */
+        margin: 0 auto !important;
+    }
+}

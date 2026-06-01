@@ -1,0 +1,390 @@
+/* src/pages/teachers/TeacherDetail.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.cyber-teacher-page {
+  background-color: #05070f;
+  /* Chuqur premium qora-ko'k */
+  min-height: 100vh;
+  padding: 50px 8% 100px 8%;
+  color: #fafafa;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* 🌌 Mesh Gradient Background Effect */
+.cyber-mesh-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 75%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cyber-teacher-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ↩️ Minimalist Ortga Qaytish Tugmasi */
+.cyber-back-team-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-10);
+  margin-bottom: 45px;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.cyber-back-team-btn:hover {
+  color: #ffffff;
+}
+
+.cyber-back-team-btn .arrow-left::before {
+  content: '←';
+}
+
+/* layout Bloklar */
+.cyber-profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* 👤 Chap panel - Avatar va Status */
+.cyber-profile-aside {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.cyber-avatar-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 25px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #090d16;
+}
+
+.cyber-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cyber-profile-name {
+  font-size: var(--font-size-25);
+  font-weight: var(--font-weight-700);
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.cyber-profile-role {
+  display: block;
+  font-size: var(--font-size-16);
+  color: #64748b;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   🔍 LIGHTBOX MODAL SYSTEM (RASMNI TO'LIQ KO'RSATISH STILLARI)
+   ========================================================================== */
+
+/* Kursorni o'zgartirish va hint effekti */
+.cyber-avatar-wrapper {
+  cursor: pointer;
+  position: relative;
+}
+
+.clickable-avatar {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cyber-avatar-wrapper:hover .clickable-avatar {
+  transform: scale(1.03);
+  filter: brightness(0.85);
+}
+
+/* Rasm ustiga kelganda yozuv chiqishi */
+.avatar-zoom-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(30, 58, 138, 0.9);
+  /* Premium ko'k */
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cyber-avatar-wrapper:hover .avatar-zoom-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Modal Qoplamasi (Overlay) */
+.cyber-image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.95);
+  /* To'q va silliq shaffof fon */
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  /* Hamma narsadan tepada turishi uchun */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInModal 0.25s ease-out;
+}
+
+/* Modal ichki o'rovchisi */
+.cyber-modal-content-wrapper {
+  position: relative;
+  max-width: 90%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ⚡ Rasmning o'zi - Mutlaqo to'liq va proporsiya buzilmasdan chiqadi */
+.cyber-modal-full-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  /* Rasmni kesmaydi, boricha sig'diradi */
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  animation: scaleUpImg 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Pastdagi izoh matni */
+.cyber-modal-caption {
+  color: #94a3b8;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Yopish tugmasi (X) */
+.cyber-modal-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  user-select: none;
+}
+
+.cyber-modal-close-btn:hover {
+  color: #ef4444;
+  /* Qizil rang */
+  transform: scale(1.1);
+}
+
+/* Animatsiyalar */
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUpImg {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobil ekranlar moslashuvi */
+@media (max-width: 768px) {
+  .cyber-modal-close-btn {
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+  }
+
+  .cyber-modal-full-img {
+    max-height: 70vh;
+  }
+}
+
+.cyber-badge-experience {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-600);
+}
+
+/* 📝 O'ng panel - Kontent bloklari */
+.cyber-profile-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cyber-info-section h3 {
+  font-size: var(--font-size-16);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.cyber-bio-p {
+  color: #8892b0;
+  font-size: var(--font-size-16);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Skillar paneli (Badgellar) */
+.cyber-skills-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-10);
+}
+
+.cyber-skill-badge {
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-500);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cyber-skill-badge:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Jadval qutisi */
+.cyber-schedule-box {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 16px 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-10);
+}
+
+.schedule-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #6366f1;
+  /* Neon ko'k-binafsha nuqta */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  flex-shrink: 0;
+}
+
+.cyber-schedule-box p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-500);
+}
+
+/* Yutuqlar */
+.cyber-achieve-p {
+  color: #8892b0;
+  font-size: var(--font-size-16);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 404 xatolik dizayni */
+.cyber-teacher-not-found {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cyber-teacher-not-found h2 {
+  color: #64748b;
+  font-size: var(--font-size-25);
+  margin-bottom: 20px;
+}
+
+.cyber-teacher-not-found button {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: var(--font-weight-600);
+  cursor: pointer;
+}
+
+/* 📱 Adaptiv moslashuvchanlik (Responsive) */
+@media (max-width: 992px) {
+  .cyber-profile-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cyber-profile-aside {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cyber-teacher-page {
+    padding: 110px 5% 60px 5%;
+  }
+
+  .cyber-back-team-btn {
+    margin-bottom: 30px;
+  }
+}

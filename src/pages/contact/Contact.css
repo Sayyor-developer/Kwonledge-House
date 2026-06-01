@@ -1,0 +1,695 @@
+/* ==========================================================================
+   EXCLUSIVE CONTACT PAGE - STYLES WITH PERFECT RESPONSIVE BENTO GRID
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.exclusive-contact-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0b0f19;
+    /* To'q kosmik fon */
+    color: #ffffff;
+    padding: 60px 20px;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 🌌 Kosmik dinamik fon aurasi */
+.cosmic-blur-core {
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 136, 204, 0.15) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.cosmic-blur-secondary {
+    position: absolute;
+    bottom: 15%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(225, 48, 108, 0.1) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.exclusive-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* Sarlavha qismi */
+.exclusive-header-zone {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: #0088cc;
+    margin-bottom: 15px;
+}
+
+.status-pill span {
+    width: 8px;
+    height: 8px;
+    background-color: #0088cc;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #0088cc;
+}
+
+.exclusive-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.exclusive-title span {
+    background: linear-gradient(90deg, #0088cc, #e1306c);
+    -webkit-background-clip: text;
+    /* Eski WebKit brauzerlar uchun */
+    background-clip: text;
+    /* 🌟 Standart variant (VS Code warningni o'chiradi) */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Standart to'ldirish (Zaxira uchun) */
+}
+
+.exclusive-desc {
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 🍱 BENTO GRID TIZIMI */
+.bento-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Umumiy Bento katakchalari */
+.bento-cell {
+    position: relative;
+    background: rgba(20, 27, 45, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bento-cell:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cell-inner {
+    position: relative;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Ariza formasi joylashgan katta katak (2 ta ustunni egallaydi) */
+.cell-form {
+    grid-column: span 2;
+    grid-row: span 2;
+    border: 1px solid rgba(0, 136, 204, 0.2);
+}
+
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+/* Input interaktiv stillari */
+.bento-inner-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.interactive-input-group {
+    position: relative;
+    width: 100%;
+}
+
+.interactive-input-group input {
+    width: 100%;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.interactive-input-group label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.interactive-input-group input:focus~label,
+.interactive-input-group input:valid~label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.8rem;
+    background: #141b2d;
+    padding: 2px 8px;
+    color: #0088cc;
+    border-radius: 4px;
+}
+
+.interactive-input-group input:focus {
+    border-color: #0088cc;
+    box-shadow: 0 0 15px rgba(0, 136, 204, 0.2);
+}
+
+.interactive-select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.select-tag {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    padding-left: 4px;
+}
+
+.interactive-select-group select {
+    width: 100%;
+    padding: 16px;
+    background: #141b2d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Yuborish tugmasi */
+.exclusive-submit-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #0b0f19;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.exclusive-submit-action:hover {
+    background: #0088cc;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+    transform: translateY(-2px);
+}
+
+/* 🌟 INTEGRATSIYA QILINGAN PREMIUM IJTIMOIY TARMOQLAR */
+.form-social-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.form-social-divider::before,
+.form-social-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-social-divider span {
+    padding: 0 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-social-links {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.telegram-btn {
+    background: rgba(0, 136, 204, 0.07);
+    color: #0088cc;
+}
+
+.telegram-btn:hover {
+    background: #0088cc;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.25);
+}
+
+.instagram-btn {
+    background: rgba(225, 48, 108, 0.07);
+    color: #e1306c;
+}
+
+.instagram-btn:hover {
+    background: linear-gradient(45deg, #f09433, #e1306c, #bc1888);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.25);
+}
+
+/* Info kichik Bento katakchalari */
+.info-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #0088cc;
+    background: rgba(0, 136, 204, 0.1);
+    padding: 4px 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cell-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.cell-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.phone-highlight {
+    font-size: 1.3rem !important;
+    font-weight: 700;
+    color: #fff;
+}
+
+.bento-bg-vector {
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+    font-size: 4rem;
+    opacity: 0.05;
+    user-select: none;
+}
+
+/* Meta ma'lumotlar */
+.info-meta .cell-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.meta-row span {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 3px;
+}
+
+.meta-row p {
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.meta-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 🗺 XARITA SEKSIYASI */
+.exclusive-map-zone {
+    width: 100%;
+    background: rgba(20, 27, 45, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.map-card-inner {
+    display: flex;
+    min-height: 380px;
+}
+
+.map-info-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map-info-side h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 15px 0 10px 0;
+}
+
+.map-address-text {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.map-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 12px;
+}
+
+.feature-dot {
+    width: 8px;
+    height: 8px;
+    background: #0088cc;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+.feature-item h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.feature-item p {
+    font-size: 0.85rem;
+    color: rgba(139, 135, 135, 0.4);
+}
+
+.map-iframe-side {
+    flex: 1.2;
+    min-height: 300px;
+    background: #101624;
+}
+
+/* ==========================================================================
+   📱 ADAPTIV VA RESPONSIVE STRIFTLAR (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Planshetlar va noutbuklar uchun */
+@media (max-width: 1024px) {
+    .bento-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cell-form {
+        grid-column: span 2;
+    }
+
+    .map-card-inner {
+        flex-direction: column;
+    }
+
+    .map-iframe-side {
+        height: 350px;
+    }
+}
+
+/* Katta telefonlar uchun (768px gacha) */
+@media (max-width: 768px) {
+    .exclusive-contact-wrapper {
+        padding: 40px 15px;
+    }
+
+    .exclusive-title {
+        font-size: 2rem;
+    }
+
+    .bento-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cell-form {
+        grid-column: span 1;
+    }
+}
+
+/* Sening holating: Mobil qurilmalar (576px dan kichik) */
+@media (max-width: 576px) {
+    .cell-inner {
+        padding: 20px;
+        /* Ichki bo'shliq moslashtirildi, elementlar toshmaydi */
+    }
+
+    .form-social-links {
+        flex-direction: column;
+        /* Tugmalar ustma-ust tushadi */
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 100%;
+    }
+}
+
+/* 📱 380px VA UNDAN KICHIK ENG MATIZ ELEKRONLAR (Muammo aynan shu yerda edi) */
+@media (max-width: 380px) {
+    .exclusive-title {
+        font-size: 1.7rem;
+    }
+
+    .cell-inner {
+        padding: 16px;
+        /* Juda tor ekranlar uchun toza padding */
+    }
+
+    .form-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .phone-highlight {
+        font-size: 1.15rem !important;
+        /* Telefon raqam shriftini siqib qo'ymaydi */
+    }
+
+    .form-social-divider span {
+        font-size: 0.7rem;
+        padding: 0 6px;
+    }
+
+    .social-btn {
+        padding: 12px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .map-info-side {
+        padding: 20px;
+    }
+
+    .map-info-side h2 {
+        font-size: 1.3rem;
+    }
+}
+
+.map-iframe-side iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+
+    /* 🌌 Xaritani qorong'u (Dark Mode) ko'rinishga o'tkazish */
+    filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
+
+    /* Saytingiz foni bilan silliq birlashishi uchun */
+    mix-blend-mode: lighten;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+/* Sichqoncha yaqinlashganda yoki bosilganda biroz yorqinlashishi uchun */
+.map-iframe-side iframe:hover {
+    opacity: 1;
+    filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(95%);
+}
+
+/* ==========================================================================
+   📱 MOBIL QURILMALAR UCHUN XARITANI TO'LIQ OCHISH (RESPONSIVE FIX)
+   ========================================================================== */
+
+/* 768px va 1024px o'rtasidagi planshetlar uchun */
+@media (max-width: 1024px) {
+    .map-card-inner {
+        flex-direction: column;
+        /* Chap tomon matn, o'ng tomon xarita ustma-ust tushadi */
+        height: auto;
+        /* Balandlikni cheklamaymiz */
+    }
+
+    .map-iframe-side {
+        width: 100%;
+        height: 400px;
+        /* Planshetda xarita balandligi */
+        min-height: 400px;
+    }
+}
+
+/* 📱 Telefonlar uchun (576px dan kichik ekranlar) */
+@media (max-width: 576px) {
+    .exclusive-map-zone {
+        height: auto !important;
+        /* Blok o'zini erkin tutadi */
+    }
+
+    .map-card-inner {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    .map-info-side {
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    /* 📍 XARITANING O'ZI TO'LIQ OCHILISHI UCHUN ENG MUHIM QISM: */
+    .map-iframe-side {
+        width: 100% !important;
+        height: 380px !important;
+        /* Kichik ekranlarda xaritaga yetarli va aniq balandlik beramiz */
+        min-height: 380px !important;
+        /* Hech qanday holatda qisqarib ketmasligi uchun */
+    }
+
+    .map-iframe-side iframe {
+        width: 100% !important;
+        height: 100% !important;
+        /* Ichidagi iframe ota blokni to'liq egallaydi */
+        display: block;
+    }
+}
+
+/* 📱 380px va undan kichik tor ekranlar uchun (Sening holating) */
+@media (max-width: 380px) {
+    .map-iframe-side {
+        height: 320px !important;
+        /* Ekran juda kichik bo'lsa, xarita proporsiyada to'liq ko'rinadi */
+        min-height: 320px !important;
+    }
+}
+
+/* --- Admin bilan bog'lanish zonasi stili --- */
+.admin-connect-zone {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.admin-divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 15px;
+}
+
+.admin-direct-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 136, 204, 0.1);
+    border: 1px solid rgba(0, 136, 204, 0.2);
+    border-radius: 12px;
+    color: #0088cc;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.admin-direct-btn:hover {
+    background: #0088cc;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+    transform: translateY(-2px);
+}
+
+.admin-btn-icon {
+    font-size: 1.1rem;
+}
+
+/* Kichik telefonlarda (380px) tugma siqilib qolmasligi uchun responsive qoida */
+@media (max-width: 380px) {
+    .admin-direct-btn {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}

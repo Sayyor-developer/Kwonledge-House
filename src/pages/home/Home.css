@@ -1,0 +1,466 @@
+/* --- GLOBAL SAHIFA KONTEYNERI --- */
+.home-page-container {
+  width: 100%;
+  background-color: #F8FAFC;
+  overflow-x: hidden;
+}
+
+/* --- PREMIUM APPL-USLUBIDAGI ANIMATSIYALAR --- */
+@keyframes modernFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+    /* Kirganda juda nafis yumshoqlik beradi */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes scaleRotateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    filter: blur(0);
+  }
+}
+
+/* --- 1. HERO SECTION (Asosiy banner) --- */
+.hero-section {
+  padding: 2.5rem 0;
+  background: radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 40%), #FFFFFF;
+}
+
+.hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-40);
+  align-items: center;
+}
+.Toastify__toast-container {
+  z-index: 999999 !important; /* Modal overlay-dan kattaroq qiymat */
+}
+
+@media (min-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Elementlarning kirib kelish daxshatli effektlari */
+.hero-badge {
+  background: rgba(30, 58, 138, 0.06);
+  color: #1E3A8A;
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
+  margin-bottom: 1.5rem;
+
+  animation: modernFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-title {
+  font-size: var(--font-size-55);
+  font-weight: var(--font-weight-900);
+  color: #0F172A;
+  line-height: 1.15;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.04em;
+
+  animation: modernFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.15s;
+  /* Sarlavha biroz keyinroq chiqadi */
+  opacity: 0;
+}
+
+.hero-title-accent {
+  color: #1E3A8A;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: var(--font-size-20);
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 540px;
+
+  animation: modernFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.3s;
+  /* Ta'rif uchinchi bo'lib chiqadi */
+  opacity: 0;
+}
+
+/* O'ng tomondagi vizual blok animatsiyasi */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleRotateIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.45s;
+  opacity: 0;
+}
+
+.visual-box {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: #0F172A;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.3);
+}
+
+.visual-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #38BDF8 0%, #1E3A8A 100%);
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.6;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.visual-text {
+  color: #FFFFFF;
+  font-weight: var(--font-weight-800);
+  letter-spacing: 0.3em;
+  font-size: var(--font-size-16);
+  z-index: 2;
+}
+
+/* --- 2. STATS SECTION (Skroll qilib kelgandagi blok) --- */
+.stats-section {
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  padding: 6rem 0;
+  border-top: 1px solid #1E293B;
+}
+
+.stats-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--gap-40);
+  text-align: center;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-10);
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.stat-card.start-anim {
+  animation: modernFadeUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.anim-delay-1.start-anim {
+  animation-delay: 0.1s;
+}
+
+.anim-delay-2.start-anim {
+  animation-delay: 0.25s;
+}
+
+.anim-delay-3.start-anim {
+  animation-delay: 0.4s;
+}
+
+.stat-number {
+  font-size: var(--font-size-50);
+  font-weight: var(--font-weight-900);
+  color: #0F172A;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+}
+
+.stat-label {
+  font-size: var(--font-size-18);
+  color: #94A3B8;
+  font-weight: var(--font-weight-500);
+}
+
+/* --- HERO CALL TO ACTION (CTA) BUTTON --- */
+.hero-cta-btn {
+  margin-top: 2.5rem;
+  background-color: #0F172A;
+  /* To'q premium qora */
+  color: #FFFFFF;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
+  padding: 1rem 2.5rem;
+  border: 2px solid #0F172A;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-10);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.15);
+
+  /* Sarlavhalardan keyin chiqishi uchun animatsiya delay */
+  animation: modernFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.45s;
+  opacity: 0;
+}
+
+.hero-cta-btn:hover {
+  background-color: #121f3c;
+  /* Hoverda neon ko'k rangga o'tadi */
+  border-color: #0F172A;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(56, 189, 248, 0.4);
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.hero-cta-btn:hover .btn-arrow {
+  transform: translateX(5px);
+  /* Arrow o'ngga qarab suriladi */
+}
+
+/* --- MODAL OVERLAY (Orqa fon xiralashishi) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  /* To'q shaffof fon */
+  backdrop-filter: blur(12px);
+  /* Apple uslubidagi daxshatli orqa fon bluri */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOverlay 0.3s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- MODAL CONTENT BOX --- */
+.modal-content-box {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 460px;
+  padding: 3rem 2.5rem;
+  border-radius: 28px;
+  border: 1px solid #E2E8F0;
+  position: relative;
+  box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.3);
+
+  /* Modal ochilganda daxshatli qalqib chiqish animatsiyasi */
+  animation: scaleUpModal 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes scaleUpModal {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Yopish tugmasi (X) */
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: #F1F5F9;
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: var(--font-size-30);
+  font-weight: var(--font-weight-400);
+  color: #64748B;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+  transform: rotate(90deg);
+}
+
+.modal-title {
+  font-size: var(--font-size-40);
+  font-weight: var(--font-weight-800);
+  color: #0F172A;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.modal-subtitle {
+  font-size: var(--font-size-16);
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
+}
+
+/* FORM ELEMENTS */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-20);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: c olumn;
+  gap: var(--gap-10);
+}
+
+.input-group label {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
+  color: #334155;
+}
+
+.input-group input {
+  padding: 1rem 1.25rem;
+  font-size: var(--font-size-16);
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  outline: none;
+  background: #F8FAFC;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #38BDF8;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+/* MODAL SUBMIT BUTTON */
+.modal-submit-btn {
+  background: #0F172A;
+  color: #FFFFFF;
+  border: none;
+  padding: 1.1rem;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.modal-submit-btn:hover {
+  background: #1E3A8A;
+  box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.3);
+  transform: translateY(-1px);
+}
+
+/* --- HERO RASM KONTENI VA EFFEKTLARI --- */
+.visual-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+  /* Rasmni chetlari yumshoq bo'lishi uchun */
+  box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.25);
+  /* Nafis premium soya */
+  z-index: 2;
+  position: relative;
+}
+
+/* Rasm orqasidagi neon nur taratib turuvchi aura */
+.visual-circle-glow {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(135deg, #38BDF8 0%, #1E3A8A 100%);
+  border-radius: 50%;
+  filter: blur(50px);
+  /* Katta blur orqali nafis fon nuri yaratamiz */
+  opacity: 0.4;
+  z-index: 1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0.5;
+  }
+}

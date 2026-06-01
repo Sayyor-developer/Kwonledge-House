@@ -1,0 +1,361 @@
+/* Asosiy Navbar qobig'i */
+.navbar {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Eski .logo-text va .logo-accent o'rniga quyidagilarni yozamiz: */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    /* Navbarni buzmaydigan eng ideal balandlik */
+    width: auto;
+    /* Proporsiyani buzmaslik uchun avto kenglik */
+    object-fit: contain;
+    /* Rasm siqilib yoki cho'zilib ketmasligi uchun */
+    display: block;
+}
+
+.navbar-row {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+/* Logotip */
+.logo-text {
+    font-size: var(--font-size-25);
+    font-weight: var(--font-weight-700);
+    color: #1E3A8A;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+}
+
+.logo-accent {
+    color: #F59E0B;
+}
+
+/* Desktop Menyusi */
+.nav-menu-desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav-menu-desktop {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-30);
+    }
+}
+
+.nav-link {
+    color: #0F172A;
+    font-weight: var(--font-weight-500);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #1E3A8A;
+}
+
+/* Kursga yozilish tugmasi */
+.nav-btn {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+    padding: 0.625rem 1.5rem;
+    border-radius: 12px;
+    font-weight: var(--font-weight-600);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.1);
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Mobil Burger Tugmasi */
+.burger-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: #0F172A;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .burger-btn {
+        display: none;
+    }
+}
+
+.burger-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Mobil Menyu Kontenti */
+.nav-menu-mobile {
+    background-color: #FFFFFF;
+    border-top: 1px solid #F1F5F9;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-20);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn-mobile {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* --- AKTIV HAVOLA (ACTIVE LINK) STILLARI --- */
+.nav-menu-desktop .nav-link.active {
+    color: #1E3A8A;
+    /* Sening asosiy to'q ko'k ranging */
+    font-weight: var(--font-weight-700);
+    /* Biroq qalinroq urg'u beradi */
+}
+
+/* Faol sahifa tagidan zamonaviy chiziqcha chiqarish effekti */
+.nav-menu-desktop .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #38BDF8;
+    /* Neon ko'k chiziqcha */
+    border-radius: 2px;
+    animation: slideInLine 0.3s ease forwards;
+}
+
+@keyframes slideInLine {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Mobil menyudagi aktiv havola stili */
+.nav-menu-mobile .nav-link.active {
+    color: #38BDF8;
+    background-color: rgba(56, 189, 248, 0.08);
+    /* Orqa foni yengil bo'yaladi */
+    border-left: 4px solid #38BDF8;
+    /* Chap tomondan chiziq tortiladi */
+    padding-left: 1.5rem;
+    /* Chiziq tushganda matn surilishi uchun */
+    font-weight: var(--font-weight-700);
+}
+
+/* ==========================================================================
+   TIL TANLASH INTEGRATSIYASI STULLARI (DESKTOP & MOBILE)
+   ========================================================================== */
+
+/* Til konteyneri */
+.lang-selector-container {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+/* Joriy til tugmasi */
+.lang-current-btn {
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    padding: 0.55rem 0.85rem;
+    border-radius: 12px;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-600);
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-10);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-current-btn:hover {
+    background: #E2E8F0;
+    border-color: #CBD5E1;
+}
+
+.lang-arrow {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.lang-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* Ochiladigan Dropdown ro'yxat */
+.lang-dropdown {
+    position: absolute;
+    top: 115%;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-10);
+    z-index: 999;
+    min-width: 130px;
+}
+
+/* Ichki til variantlari */
+.lang-option {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-500);
+    color: #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-10);
+    transition: all 0.15s ease;
+}
+
+.lang-option:hover {
+    background: #F1F5F9;
+    color: #0F172A;
+}
+
+.lang-option.active {
+    background: #0F172A;
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   MOBIL MENYU ICHIDAGI TIL KO'RINISHI
+   ========================================================================== */
+.nav-mobile-lang-box {
+    width: 100%;
+    padding: 1rem 0;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-20);
+}
+
+.mobile-lang-title {
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-600);
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+.mobile-lang-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-10);
+}
+
+.mobile-lang-btn {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 0.65rem 0.5rem;
+    border-radius: 10px;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-600);
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-lang-btn.active {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-color: #0F172A;
+}
+
+.m-flag {
+    font-size: var(--font-size-18);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE MEDIA FILTRLARI (380PX GACHA NAV INTEGRATSIYASI)
+   ========================================================================== */
+
+/* Noutbuklar va planshetlar kesishuvida (1100px gacha textlarni ixchamlashtirish) */
+@media (max-width: 1100px) {
+    .lang-text-hide {
+        display: none;
+        /* Katta ekran biroz toraysa faqat bayroq qoladi */
+    }
+
+    .lang-current-btn {
+        padding: 0.55rem;
+    }
+}
+
+/* 🔥 ENG KICHIK MOBIL EKRANLAR FILTRI (380PX GACHA) */
+@media (max-width: 380px) {
+    .nav-menu-mobile {
+        padding: 1.25rem 0.75rem;
+        /* Menyu ichki paddingi kamayadi */
+        gap: var(--gap-20);
+    }
+
+    .mobile-lang-btn {
+        padding: 0.5rem 0.25rem;
+        font-size: var(--font-size-14);
+        /* 380px ekranda 3 ta tugma sig'ishi uchun */
+        border-radius: 8px;
+    }
+
+    .m-flag {
+        font-size: var(--font-size-16);
+    }
+
+    .nav-btn-mobile {
+        padding: 0.85rem;
+        font-size: var(--font-size-16);
+    }
+}

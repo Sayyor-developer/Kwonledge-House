@@ -1,0 +1,650 @@
+/* src/pages/about/About.css */
+
+.about-section {
+    padding: 3.0rem 1rem;
+    background-color: #F8FAFC;
+    /* Silliq och fon */
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-30);
+}
+
+/* Header qismi */
+.about-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-badge {
+    background-color: #E2E8F0;
+    color: #0F172A;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.about-main-title {
+    font-size: var(--font-size-25);
+    font-weight: var(--font-weight-800);
+    color: #0F172A;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.about-subtitle {
+    font-size: var(--font-size-16);
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Grid tuzilishi */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--gap-30);
+    align-items: start;
+}
+
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--gap-30);
+    }
+}
+
+/* Chap tomon info kartasi */
+.about-info-card {
+    background: #FFFFFF;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.about-info-card h3 {
+    font-size: var(--font-size-25);
+    font-weight: var(--font-weight-700);
+    color: #0F172A;
+    margin-bottom: 1.25rem;
+}
+
+.about-text {
+    font-size: var(--font-size-16);
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+/* Afzalliklar ro'yxati */
+.about-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-30);
+}
+
+.feature-item {
+    display: flex;
+    gap: var(--gap-10);
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: var(--font-size-25);
+    background: #F1F5F9;
+    padding: 0.75rem;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-text h4 {
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-700);
+    color: #0F172A;
+    margin: 0 0 0.35rem 0;
+}
+
+.feature-text p {
+    font-size: var(--font-size-14);
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* O'ng tomon statistika va aloqa */
+.about-stats-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-20);
+}
+
+.stats-box-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-20);
+}
+
+.stat-card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+}
+
+.stat-num {
+    display: block;
+    font-size: var(--font-size-30);
+    font-weight: var(--font-weight-800);
+    color: #1E3A8A;
+    /* Loyihadagi urg'u ko'k rangi */
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-600);
+    color: #64748B;
+}
+
+/* Aloqa qutisi */
+.about-contact-accent-box {
+    background: #0F172A;
+    /* Loyihadagi to'q brend foni */
+    color: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.3);
+}
+
+.about-contact-accent-box h4 {
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-700);
+    margin: 0 0 0.75rem 0;
+    color: #FFFFFF;
+}
+
+.about-contact-accent-box p {
+    font-size: var(--font-size-16);
+    color: #94A3B8;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.about-phones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-10);
+    margin-bottom: 1.75rem;
+}
+
+.about-phones a {
+    font-size: var(--font-size-20);
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.about-phones a:hover {
+    color: #38BDF8;
+    /* Silliq och ko'k effekt */
+}
+
+.about-social-tag {
+    border-top: 1px solid #334155;
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-10);
+    font-size: var(--font-size-16);
+}
+
+.about-social-tag span {
+    color: #94A3B8;
+}
+
+.about-social-tag strong {
+    color: #38BDF8;
+    font-size: var(--font-size-16);
+}
+
+/* ==========================================================================
+   USTOZLAR KAROBKASI LABELLARI VA KARTALARI STULLARI
+   ========================================================================== */
+
+.teachers-section {
+    margin-top: 5rem;
+    padding-top: 4rem;
+    border-top: 1px solid #E2E8F0;
+    /* Yuqoridan ajratuvchi nozik chiziq */
+}
+
+.teachers-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.teachers-main-title {
+    font-size: var(--font-size-30);
+    font-weight: var(--font-weight-800);
+    color: #0F172A;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.teachers-subtitle {
+    font-size: var(--font-size-16);
+    color: #64748B;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Ustozlar Grid strukturasi */
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--gap-30);
+    margin-top: 1.5rem;
+}
+
+/* Ustoz Premium kartochkasi */
+.teacher-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.teacher-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
+    border-color: #CBD5E1;
+}
+
+/* Rasm joylashishi */
+.teacher-img-wrapper {
+    width: 100%;
+    height: 240px;
+    background: #F8FAFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.teacher-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.teacher-card:hover {
+    & .teacher-img {
+        transform: scale(1.04);
+    }
+}
+
+/* Ustoz matnli kontenti */
+.teacher-info {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #F1F5F9;
+}
+
+.teacher-name {
+    font-size: var(--font-size-20);
+    font-weight: var(--font-weight-700);
+    color: #0F172A;
+    margin: 0 0 0.35rem 0;
+}
+
+.teacher-role {
+    font-size: var(--font-size-16);
+    color: #1E3A8A;
+    /* Akademik ko'k urg'u */
+    font-weight: var(--font-weight-600);
+    margin-bottom: 1.25rem;
+    display: inline-block;
+}
+
+.teacher-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-10);
+    background: #F8FAFC;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-exp,
+.teacher-spec {
+    font-size: var(--font-size-14);
+    color: #475569;
+    font-weight: var(--font-weight-500);
+}
+
+/* Profilga o'tish tugmasi */
+.teacher-profile-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: #F1F5F9;
+    color: #334155;
+    border: none;
+    border-radius: 12px;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-600);
+    cursor: pointer;
+    border: 1px solid #1E3A8A;
+    margin-top: auto;
+    /* Tugmani har doim kartaning eng pastiga itaradi */
+    transition: all 0.2s ease;
+}
+
+.teacher-profile-btn:hover {
+    background: #1E3A8A;
+    /* Ustiga borganda brend rangiga kiradi */
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   ABOUT & TEACHERS SECTION RESPONSIVE STULLARI (380PX GACHA MOSLASHUV)
+   ========================================================================== */
+
+/* 1. Katta planshetlar va noutbuklar uchun (1024px gacha) */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1.2fr 1fr;
+        /* Bloklar nisbati biroz moslashadi */
+        gap: var(--gap-30);
+    }
+
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* Ustozlar siqilmaydi */
+        gap: var(--gap-20);
+    }
+}
+
+/* 2. Kichik planshetlar uchun (968px gacha) */
+@media (max-width: 968px) {
+    .about-section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .about-main-title {
+        font-size: var(--font-size-30);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        /* Hamma narsa 1 qator bo'lib tushadi */
+        gap: var(--gap-30);
+    }
+
+    .about-info-card {
+        padding: 2rem;
+    }
+}
+
+/* 3. Mobil telefonlar uchun (768px gacha) */
+@media (max-width: 768px) {
+    .about-container {
+        gap: 2.5rem;
+    }
+
+    .stats-box-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Statistika yonma-yon turadi */
+    }
+
+    .teachers-section {
+        margin-top: 3.5rem;
+        padding-top: 2.5rem;
+    }
+
+    .teachers-main-title {
+        font-size: var(--font-size-25);
+    }
+}
+
+/* 4. Kichikroq smartfonlar uchun (480px gacha) */
+@media (max-width: 480px) {
+    .about-section {
+        padding: 2rem 1rem;
+        /* Ekran chetidan bo'shliq qisqaradi */
+    }
+
+    .about-main-title {
+        font-size: var(--font-size-25);
+        text-align: left;
+        /* Kichik ekranda sarlavha chapdan tekis tursa chiroyli chiqadi */
+    }
+
+    .about-subtitle {
+        font-size: var(--font-size-16);
+        text-align: left;
+    }
+
+    .about-info-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .about-info-card h3 {
+        font-size: var(--font-size-25);
+        margin-bottom: 1rem;
+    }
+
+    .about-text {
+        font-size: var(--font-size-16);
+        margin-bottom: 1.75rem;
+    }
+
+    .feature-item {
+        gap: var(--gap-10);
+    }
+
+    .feature-icon {
+        padding: 0.6rem;
+        font-size: var(--font-size-20);
+    }
+
+    .feature-text h4 {
+        font-size: var(--font-size-18);
+    }
+
+    /* Aloqa va statistika qutisi */
+    .stats-box-grid {
+        /* Endi statistikalar ham ketma-ket tushadi */
+        gap: var(--gap-20);
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .about-contact-accent-box {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .about-phones a {
+        font-size: var(--font-size-18);
+        /* Telefon raqamlar ekrandan chiqib ketmaydi */
+    }
+
+    /* Ustozlar qismi */
+    .teachers-header {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .teachers-main-title {
+        font-size: var(--font-size-25);
+    }
+
+    .teacher-info {
+        padding: 1.25rem;
+    }
+}
+
+/* 5. 🔥 ENG KICHIK EKRANLAR UCHUN MAXSUS FILTR (380PX GACHA) */
+@media (max-width: 380px) {
+    .about-section {
+        padding: 1.5rem 0.75rem;
+        /* Minimal yon padding */
+    }
+
+    .about-main-title {
+        font-size: var(--font-size-25);
+    }
+
+    .about-info-card,
+    .about-contact-accent-box,
+    .teacher-card {
+        padding: 1.25rem 1rem;
+        /* Elementlar ichidagi siqilish butunlay yo'qoladi */
+        border-radius: 16px;
+    }
+
+    .feature-text p {
+        font-size: var(--font-size-14);
+    }
+
+    .stat-num {
+        font-size: var(--font-size-30);
+    }
+
+    .about-contact-accent-box h4 {
+        font-size: var(--font-size-18);
+    }
+
+    .about-phones a {
+        font-size: var(--font-size-16);
+        /* 380px da raqamlar to'liq sig'ishi uchun */
+    }
+
+    /* Ustoz rasmining balandligi va kartochkasi */
+    .teacher-img-wrapper {
+        height: 200px;
+        /* Rasm proporsiyasi kichik ekranga moslashadi */
+    }
+
+    .teacher-name {
+        font-size: var(--font-size-18);
+    }
+
+    .teacher-role {
+        font-size: var(--font-size-14);
+        margin-bottom: 0.85rem;
+    }
+
+    .teacher-meta {
+        padding: 0.65rem 0.85rem;
+        gap: var(--gap-10);
+        margin-bottom: 1rem;
+    }
+
+    .teacher-exp,
+    .teacher-spec {
+        font-size: var(--font-size-14);
+    }
+
+    .teacher-profile-btn {
+        padding: 0.75rem;
+        font-size: var(--font-size-14);
+        border-radius: 10px;
+    }
+}
+
+/* ==========================================================================
+   🖼️ USTOZLAR RASMI VA RESPONSIVE TIZIMI (YANGILANGAN QISM)
+   ========================================================================== */
+
+/* Rasm o'ralgan quti - qat'iy balandlikni olib tashladik, o'rniga zamonaviy aspect-ratio berdik */
+.teacher-img-wrapper {
+    width: 100%;
+    /* 👇 Bannerlar chiroyli va to'liq o'tirishi uchun standart ekran nisbati */
+    aspect-ratio: 4 / 3;
+    background: #F8FAFC;
+    /* Rasm foni och bo'lgani uchun mos silliq fon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    /* 👇 Rasm chekkalardan sal orqaroqda, chiroyli o'tirishi uchun xavfsiz masofa */
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Rasmning o'zi - go'yoki kamerani orqaga olgandek vizual effekt */
+.teacher-img {
+    width: 100%;
+    height: 100%;
+    /* 👇 Eng asosiysi! Rasmni kesmaydi, boricha (gavdasi+yuzi) qutiga sig'diradi */
+    object-fit: contain;
+    display: block;
+    /* 👇 Rasmni karta ichida vizual jihatdan 95% gacha sal orqaroqqa surib beradi */
+    transform: scale(0.96);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Kartaga sichqoncha kelganda rasm joyida juda chiroyli va silliq yaqinlashadi (Premium UX) */
+.teacher-card:hover .teacher-img {
+    transform: scale(1.02);
+}
+
+
+/* ==========================================================================
+   📱 RESPONSIVE MEDIA SO'ROVLARIDAGI RASM QISMLARI (TO'G'RILANGANI)
+   ========================================================================== */
+
+/* 4. Kichikroq smartfonlar uchun (480px gacha) */
+@media (max-width: 480px) {
+    /* ... eski boshqa kodlaring o'zi qoladi ... */
+
+    .teacher-img-wrapper {
+        /* Kichik ekranda rasm qutisi va padding mutanosib kichrayadi */
+        padding: 8px;
+        aspect-ratio: 4 / 3;
+        /* Nisbat buzilmaydi, rasm siqilmaydi */
+    }
+}
+
+/* 5. 🔥 ENG KICHIK EKRANLAR UCHUN MAXSUS FILTR (380PX GACHA) */
+@media (max-width: 380px) {
+    /* ... eski boshqa kodlaring o'zi qoladi ... */
+
+    /* Senda eski kodda height: 200px bor edi, uni mana buga almashtiramiz: */
+    .teacher-img-wrapper {
+        padding: 6px;
+        aspect-ratio: 4 / 3;
+        /* 380px ekranda ham gavda to'liqligicha chotki turadi */
+    }
+
+    .teacher-img {
+        transform: scale(0.98);
+        /* Kichik ekranda maksimal joydan foydalanish uchun */
+    }
+}

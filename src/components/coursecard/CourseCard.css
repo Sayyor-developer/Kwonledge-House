@@ -1,0 +1,144 @@
+/* src/components/coursecard/CourseCard.css */
+
+.premium-course-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px; /* Hamma karobkalar bir xil balandlikda turishi uchun */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Hover bo'lganda juda silliq va qimmatbaho effekt */
+.premium-course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #38BDF8; /* Neon ko'k chiziq */
+}
+
+/* TEPPA QATOR (Ikonka va Badge) */
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.course-card-icon-box {
+  width: 46px;
+  height: 46px;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.premium-course-card:hover .course-card-icon-box {
+  background-color: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* KATEGORIYA BADGE */
+.course-card-badge {
+  font-size: var(--fpnt-size-14);
+  font-weight: var(--font-weight-700);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tag-it { background-color: rgba(56, 189, 248, 0.12); color: #0369A1; }
+.tag-language { background-color: rgba(34, 197, 94, 0.12); color: #15803D; }
+.tag-science { background-color: rgba(168, 85, 247, 0.12); color: #7E22CE; }
+.tag-special { background-color: rgba(249, 115, 22, 0.12); color: #C2410C; }
+
+/* ASOSIY MATNLAR */
+.card-main-body {
+  flex-grow: 1; /* Tavsif matni qisqa bo'lsa ham footer pastga tushib turadi */
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card-title {
+  font-size: var(--fpnt-size-18);
+  font-weight: var(--font-weight-700);
+  color: #0F172A;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.course-card-description {
+  font-size: var(--fpnt-size-16);
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+/* FOOOTER QISMI (Xatolik tuzatilgan joyi 🛠️) */
+.card-footer-info {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-10); /* Elementlar orasida chiroyli masofa */
+}
+
+/* Davomiyligi va Narxi alohida chiroyli qatorlarda bo'ladi */
+.footer-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fpnt-size-16);
+}
+
+.footer-info-item span:first-child {
+  color: #94A3B8;
+  font-weight: var(--font-weight-500);
+}
+
+.footer-info-item strong {
+  color: #334155;
+  font-weight: var(--font-weight-700);
+  font-size: var(--fpnt-size-16);
+}
+
+.footer-info-item .info-value-price {
+  color: #1E3A8A; /* To'q ko'k rang */
+  font-weight: var(--font-weight-800);
+  font-size: var(--fpnt-size-16);
+}
+
+/* BATAFSIL TUGMASI (Daxshatli modern ko'rinish) */
+.card-batafsil-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #F8FAFC;
+  color: #1E3A8A;
+
+  border: 1px solid #1E3A8A;
+  border-radius: 12px;
+  font-weight: var(--font-weight-600);
+  font-size: var(--fpnt-size-16);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-10);
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.card-batafsil-btn:hover {
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  border-color: #1E3A8A;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
