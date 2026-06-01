@@ -155,7 +155,7 @@ const About = () => {
         {/* Yuqori sarlavha qismi */}
         <div className="about-header">
           <span className="about-badge">O'quv Markazi Haqida</span>
-          <h2 className="about-main-title">Knowledge House bilan Kelajakni Qurung</h2>
+          <h2 className="about-main-title">Knowledge House bilan Kelajakni Quring</h2>
           <p className="about-subtitle">
             Biz har bir o'quvchiga individual yondashuv va eng zamonaviy metodikalar asosida sifatli ta'lim berishni maqsad qilganmiz.
           </p>
