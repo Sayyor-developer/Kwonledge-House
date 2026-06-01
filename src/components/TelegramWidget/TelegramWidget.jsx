@@ -41,7 +41,7 @@ const TelegramWidget = () => {
 
       {/* 🚀 Haqiqiy Telegram suzuvchi tugmasi */}
       <a 
-        href="https://t.me/your_telegram_username" // 👈 Bu yerga adminga olib o'tadigan linkni yoz jigar
+        href="https://t.me/Knowledge_house_Admin2" // 👈 Bu yerga adminga olib o'tadigan linkni yoz jigar
         target="_blank" 
         rel="noopener noreferrer" 
         className="tg-floating-btn s"

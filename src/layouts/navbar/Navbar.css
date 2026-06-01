@@ -317,7 +317,42 @@
 .m-flag {
     font-size: var(--font-size-18);
 }
+/* Mobil menyu konteyneri */
+.nav-menu-mobile {
+  position: absolute;
+  top: 100%; /* Navbar ostidan boshlanadi */
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  visibility: hidden; /* Dastlab yashirin */
+  opacity: 0;
+  transform: translateY(-20px); /* Boshlanish joyi */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  z-index: 999;
+}
 
+/* Faol holat */
+.nav-menu-mobile.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0); /* Joyiga tushadi */
+}
+
+/* Linklarning chiqish effekti */
+.nav-menu-mobile .nav-link {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: 0.2s;
+}
+
+.nav-menu-mobile .nav-link:hover {
+  background: #f9f9f9;
+  padding-left: 25px; /* Hoverda silliq siljiydi */
+}
 
 /* ==========================================================================
    RESPONSIVE MEDIA FILTRLARI (380PX GACHA NAV INTEGRATSIYASI)

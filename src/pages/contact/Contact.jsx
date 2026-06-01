@@ -199,7 +199,7 @@ const Contact = () => {
               <div className="meta-line"></div>
               <div className="meta-row">
                 <span>Ish vaqti:</span>
-                <p>Dushanba — Shanba (09:00 - 21:00)</p>
+                <p>Dushanba — Shanba (07:00 - 20:30)</p>
               </div>
             </div>
           </div>
